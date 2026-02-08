@@ -12,7 +12,7 @@ export const Hero = () => {
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group"
             >
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center filter grayscale contrast-125 transition-transform duration-[2s] group-hover:scale-110"></div>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2070&auto=format=fit=crop')] bg-cover bg-center filter grayscale contrast-125 transition-transform duration-[2s] group-hover:scale-110"></div>
                 <div className="absolute inset-0 bg-navy/60 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent opacity-80"></div>
             </motion.div>
@@ -24,7 +24,7 @@ export const Hero = () => {
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group"
             >
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532264523420-881a47db012d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110"></div>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532264523420-881a47db012d?q=80&w=2070&auto=format=fit=crop')] bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110"></div>
                 <div className="absolute inset-0 bg-teal/80 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent opacity-90"></div>
             </motion.div>
