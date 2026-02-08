@@ -5,26 +5,26 @@ import { motion } from 'framer-motion';
 export const Hero = () => {
     return (
         <section className="relative h-screen w-full flex flex-col md:flex-row bg-navy overflow-hidden">
-            {/* Left Split */}
+            {/* Left Split - NORDIC */}
             <motion.div
                 initial={{ x: "-100%" }}
                 animate={{ x: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group"
             >
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center filter grayscale contrast-125 transition-transform duration-[2s] group-hover:scale-110"></div>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center filter grayscale contrast-125 transition-transform duration-[2s] group-hover:scale-110"></div>
                 <div className="absolute inset-0 bg-navy/60 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent opacity-80"></div>
             </motion.div>
 
-            {/* Right Split */}
+            {/* Right Split - ASIA */}
             <motion.div
                 initial={{ x: "100%" }}
                 animate={{ x: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group"
             >
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110"></div>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532264523420-881a47db012d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110"></div>
                 <div className="absolute inset-0 bg-teal/80 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent opacity-90"></div>
             </motion.div>
@@ -37,7 +37,7 @@ export const Hero = () => {
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="font-display font-extrabold text-[12vw] md:text-[7vw] leading-[0.85] tracking-tighter text-center text-white"
                 >
-                    <span className="block text-stroke opacity-75">BRIDGING</span>
+                    <span className="block text-stroke opacity-30">BRIDGING</span>
                     <span className="block">CONTINENTS</span>
                 </motion.h1>
             </div>
