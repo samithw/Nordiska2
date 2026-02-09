@@ -1,102 +1,109 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-const accordionData = [
+const services = [
     {
-        num: "01",
         title: "Sales & Marketing",
-        desc: "Expert inbound/outbound strategies tailored for EU-Asia markets. We build your brand presence and drive qualified leads.",
+        description1: "We craft expert inbound and outbound strategies tailored for the unique dynamics of EU-Asia markets. Our approach is designed to build a powerful brand presence and drive a consistent stream of qualified leads to your business.",
+        description2: "By combining market intelligence with creative storytelling, we ensure your message resonates with the right audience, turning potential interest into measurable growth and establishing your foothold in competitive international markets.",
+        image: "https://picsum.photos/seed/sales/800/600",
+        imageHint: "marketing strategy"
     },
     {
-        num: "02",
         title: "Partner & Customer Search",
-        desc: "Connecting you with vetted business partners and customers. We leverage our extensive network to find the perfect match for your business.",
+        description1: "Leveraging our extensive and meticulously vetted network, we connect you with the ideal business partners and customers. We go beyond simple introductions, focusing on strategic alignment and long-term potential.",
+        description2: "Our process involves deep due diligence to ensure that every connection we facilitate is not just a contact, but a valuable, synergistic relationship that can accelerate your growth and market penetration.",
+        image: "https://picsum.photos/seed/partner/800/600",
+        imageHint: "business handshake"
     },
     {
-        num: "03",
         title: "Business Development",
-        desc: "Strategic growth planning and market penetration. We identify new opportunities and create pathways for sustainable expansion.",
+        description1: "Our team specializes in strategic growth planning and market penetration. We meticulously identify and analyze new market opportunities, creating actionable pathways for sustainable and profitable expansion.",
+        description2: "We work as an extension of your team to turn strategy into reality, navigating local complexities and building the foundational relationships necessary for long-term success in new territories.",
+        image: "https://picsum.photos/seed/businessdev/800/600",
+        imageHint: "growth chart"
     },
     {
-        num: "04",
         title: "GTM Strategy",
-        desc: "Comprehensive Go-To-Market execution for new regions. From planning to launch, we ensure a successful market entry.",
+        description1: "We provide comprehensive Go-To-Market execution for companies entering new regions. Our holistic service covers every phase, from initial market research and strategic planning to a successful and impactful launch.",
+        description2: "We manage the complexities of localization, regulatory compliance, and channel development, ensuring your product or service makes a powerful and well-received entry into the target market.",
+        image: "https://picsum.photos/seed/gtm/800/600",
+        imageHint: "world map"
     },
     {
-        num: "05",
         title: "Application Consultancy",
-        desc: "Technical advisory for specialized industrial applications. Our experts provide insights to optimize your technology stack.",
+        description1: "Our seasoned experts offer high-level technical advisory for specialized industrial applications. We provide critical insights to help you design, optimize, and future-proof your technology stack.",
+        description2: "We assess your current systems, identify areas for improvement, and recommend innovative solutions that enhance efficiency, reduce operational costs, and give you a significant competitive advantage.",
+        image: "https://picsum.photos/seed/consultancy/800/600",
+        imageHint: "industrial machinery"
     },
     {
-        num: "06",
         title: "On-Site Training",
-        desc: "Knowledge transfer workshops and operational training. We empower your team with the skills they need to succeed.",
+        description1: "We believe in empowering your team with the knowledge they need to excel. Our on-site training programs and knowledge transfer workshops are designed to be practical, engaging, and directly applicable to your operations.",
+        description2: "From technical skills for new equipment to best practices in operational management, we ensure your local teams are fully equipped to maintain high standards of performance and drive your projects forward.",
+        image: "https://picsum.photos/seed/training/800/600",
+        imageHint: "team workshop"
     },
     {
-        num: "07",
         title: "Aftersales Services",
-        desc: "Long-term maintenance and lifecycle support to ensure operational excellence and customer satisfaction.",
+        description1: "Our commitment to your success extends far beyond project completion. We provide robust, long-term maintenance and lifecycle support to ensure continuous operational excellence and maximize your return on investment.",
+        description2: "With local support teams and proactive monitoring, we guarantee customer satisfaction, minimize downtime, and help you adapt to evolving challenges long after the initial installation.",
+        image: "https://picsum.photos/seed/aftersales/800/600",
+        imageHint: "support engineer"
     }
 ];
 
-
-const AccordionItem = ({ item, isOpen, onClick }: { item: any, isOpen: boolean, onClick: () => void}) => (
-    <div className="border-b border-navy/10">
-        <button
-            onClick={onClick}
-            className="w-full py-10 flex justify-between items-center text-left group hover:bg-white/50 transition-colors px-4 md:px-8"
-        >
-            <div className="flex items-center gap-8">
-                <span className={`font-display text-sm font-bold ${isOpen ? 'text-teal' : 'text-navy/30'}`}>{item.num}</span>
-                <h3 className={`font-display text-2xl md:text-4xl font-bold uppercase transition-colors ${isOpen ? 'text-teal' : 'text-navy group-hover:text-teal'}`}>
-                    {item.title}
-                </h3>
-            </div>
-            <div className={`transition-transform duration-500 ${isOpen ? 'rotate-45 text-teal' : 'text-navy'}`}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            </div>
-        </button>
-        <AnimatePresence>
-            {isOpen && (
-                <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                >
-                    <div className="pb-12 pl-16 md:pl-24 pr-8 md:pr-32">
-                        <p className="text-lg text-steel leading-relaxed">{item.desc}</p>
-                    </div>
-                </motion.div>
-            )}
-        </AnimatePresence>
-    </div>
-);
-
-
 export const Services = () => {
-    const [openIndex, setOpenIndex] = useState(0);
-
     return (
-        <section id="what-we-do" className="py-32 bg-beige">
+        <section id="what-we-do" className="py-32 bg-beige overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-20"
+                >
                     <span className="text-teal font-bold uppercase tracking-widest text-xs mb-4 block">Our Expertise</span>
                     <h2 className="font-display text-5xl lg:text-6xl font-bold text-navy leading-tight">
                         Lifecycle Solutions.
                     </h2>
-                </div>
-                <div className="border-t border-navy/10">
-                    {accordionData.map((item, idx) => (
-                        <AccordionItem
-                            key={idx}
-                            item={item}
-                            isOpen={openIndex === idx}
-                            onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
-                        />
+                </motion.div>
+
+                <div className="space-y-24">
+                    {services.map((service, index) => (
+                        <motion.div
+                            key={service.title}
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                        >
+                            <div className={`relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                                <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    className="object-cover"
+                                    data-ai-hint={service.imageHint}
+                                />
+                                <div className="absolute inset-0 bg-navy/20"></div>
+                            </div>
+                            
+                            <div className={`lg:px-8 ${index % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                                <div className="flex items-center gap-4 mb-6">
+                                    <span className="text-teal font-display font-bold text-5xl">0{index + 1}</span>
+                                    <div className="w-16 h-0.5 bg-teal"></div>
+                                </div>
+                                <h3 className="font-display text-4xl font-bold text-navy mb-6">{service.title}</h3>
+                                <div className="space-y-6 text-steel font-light leading-relaxed">
+                                    <p>{service.description1}</p>
+                                    <p>{service.description2}</p>
+                                </div>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
