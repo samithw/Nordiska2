@@ -77,7 +77,7 @@ export const Services = () => {
     const activeService = services[activeTab];
 
     return (
-        <section id="what-we-do" className="py-32 bg-beige">
+        <section id="what-we-do" className="py-24 bg-beige">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                      <span className="text-teal font-bold uppercase tracking-widest text-xs mb-4 block">Our Expertise</span>
@@ -85,28 +85,25 @@ export const Services = () => {
                         Comprehensive Services.
                     </h2>
                 </div>
-                <div className="relative flex flex-col lg:flex-row min-h-[80vh] overflow-hidden rounded-lg shadow-2xl bg-navy">
+                <div className="relative flex flex-col lg:flex-row h-[70vh] overflow-hidden rounded-lg shadow-2xl bg-navy">
                     {/* Left Pane - Tabs */}
                     <div
-                        className="w-full lg:w-1/3 bg-navy text-beige p-8 lg:p-12 flex flex-col justify-center"
+                        className="w-full lg:w-1/3 bg-navy text-beige flex flex-col"
                     >
-                        <ul className="flex flex-col">
+                        <ul className="flex flex-col h-full">
                             {services.map((service, index) => (
-                                <li key={index}>
+                                <li key={index} className="flex-1">
                                     <button
                                         onClick={() => setActiveTab(index)}
-                                        className={`w-full text-left p-6 transition-colors duration-300 flex items-start gap-5 border-l-4 ${
+                                        className={`w-full h-full text-left p-4 transition-colors duration-300 flex items-center gap-4 border-l-4 ${
                                             activeTab === index
                                                 ? 'bg-steel/30 border-teal'
                                                 : 'border-transparent hover:bg-steel/20'
                                         }`}
                                     >
-                                        <Icon name={service.icon} className={`w-8 h-8 transition-colors shrink-0 mt-1 ${activeTab === index ? 'text-teal' : 'text-white'}`} />
+                                        <Icon name={service.icon} className={`w-7 h-7 transition-colors shrink-0 ${activeTab === index ? 'text-teal' : 'text-white'}`} />
                                         <div>
-                                            <h3 className={`font-display font-bold text-2xl transition-colors ${activeTab === index ? 'text-white' : 'text-gray-300'}`}>{service.title}</h3>
-                                            <p className="font-light text-sm text-gray-400 mt-2 pr-4 hidden md:block">
-                                                {service.description.split('.')[0]}.
-                                            </p>
+                                            <h3 className={`font-display font-bold text-xl transition-colors ${activeTab === index ? 'text-white' : 'text-gray-300'}`}>{service.short_title}</h3>
                                         </div>
                                     </button>
                                 </li>
@@ -127,7 +124,7 @@ export const Services = () => {
                                 transition={{ duration: 0.5, ease: "easeInOut" }}
                                 className="w-full h-full"
                             >
-                               <div className="relative w-full h-full min-h-[50vh] lg:min-h-0">
+                               <div className="relative w-full h-full">
                                     <Image
                                         src={activeService.image}
                                         alt={activeService.title}
@@ -135,7 +132,7 @@ export const Services = () => {
                                         className="object-cover"
                                         data-ai-hint={activeService.imageHint}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-teal via-teal/70 to-transparent flex flex-col justify-end p-8 lg:p-16">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-teal via-teal/70 to-transparent flex flex-col justify-end p-8 lg:p-12">
                                         <motion.div
                                              initial={{ opacity: 0, y: 30 }}
                                              animate={{ opacity: 1, y: 0 }}
