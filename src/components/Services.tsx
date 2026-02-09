@@ -30,7 +30,7 @@ const services = [
         short_title: "Business Dev",
         description: "Our team specializes in strategic growth planning and market penetration. We identify new opportunities and create actionable pathways for sustainable and profitable expansion into new territories. From joint ventures to strategic alliances, we pave the way for your success.",
         icon: "trending-up",
-        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format=fit=crop",
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format=fit=crop",
         imageHint: "business strategy meeting",
         link: "#"
     },
@@ -57,7 +57,7 @@ const services = [
         short_title: "On-Site Training",
         description: "We empower your team with the knowledge they need to excel. Our on-site training programs and workshops are practical, engaging, and directly applicable to your daily operations. Our goal is to make your team self-sufficient and highly skilled.",
         icon: "book-open",
-        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format=fit=crop",
+        image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=2070&auto=format=fit=crop",
         imageHint: "team workshop",
         link: "#"
     },
@@ -66,7 +66,7 @@ const services = [
         short_title: "Aftersales",
         description: "Our commitment extends beyond project completion. We provide robust, long-term maintenance and lifecycle support to ensure continuous operational excellence and maximize your return on investment. We are your partners for the long haul.",
         icon: "tool",
-        image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format=fit=crop",
+        image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=2069&auto=format=fit=crop",
         imageHint: "engineer maintenance",
         link: "#"
     }
@@ -77,19 +77,19 @@ export const Services = () => {
     const activeService = services[activeTab];
 
     return (
-        <section id="what-we-do" className="py-32 bg-navy">
+        <section id="what-we-do" className="py-32 bg-beige">
             <div className="container mx-auto px-6">
-                <div className="relative flex flex-col lg:flex-row min-h-[80vh] overflow-hidden rounded-lg shadow-2xl">
+                <div className="text-center mb-16">
+                     <span className="text-teal font-bold uppercase tracking-widest text-xs mb-4 block">Our Expertise</span>
+                    <h2 className="font-display text-4xl lg:text-5xl font-bold text-navy leading-tight">
+                        Comprehensive Services.
+                    </h2>
+                </div>
+                <div className="relative flex flex-col lg:flex-row min-h-[80vh] overflow-hidden rounded-lg shadow-2xl bg-navy">
                     {/* Left Pane - Tabs */}
                     <div
-                        className="w-full lg:w-1/2 bg-navy text-beige p-8 py-16 lg:p-16 flex flex-col justify-center"
+                        className="w-full lg:w-1/3 bg-navy text-beige p-8 lg:p-12 flex flex-col justify-center"
                     >
-                        <div className="mb-12">
-                             <span className="text-teal font-bold uppercase tracking-widest text-xs mb-4 block">Our Expertise</span>
-                            <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-                                Comprehensive Services.
-                            </h2>
-                        </div>
                         <ul className="flex flex-col">
                             {services.map((service, index) => (
                                 <li key={index}>
@@ -116,7 +116,7 @@ export const Services = () => {
 
                     {/* Right Pane - Content */}
                     <div
-                        className="w-full lg:w-1/2 bg-teal text-beige relative"
+                        className="w-full lg:w-2/3 bg-teal text-beige relative"
                     >
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -127,7 +127,7 @@ export const Services = () => {
                                 transition={{ duration: 0.5, ease: "easeInOut" }}
                                 className="w-full h-full"
                             >
-                               <div className="relative w-full h-full">
+                               <div className="relative w-full h-full min-h-[50vh] lg:min-h-0">
                                     <Image
                                         src={activeService.image}
                                         alt={activeService.title}
