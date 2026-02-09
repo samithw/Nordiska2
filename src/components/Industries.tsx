@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 
 const industries = [
-    { name: "Water & Wastewater", img: "https://images.unsplash.com/photo-1574482620262-6063132d2631?q=80&w=1000&auto=format&fit=crop" },
+    { name: "Water & Wastewater", img: "https://images.unsplash.com/photo-1664578876668-5b9eab5d0a8e?q=80&w=1000&auto=format&fit=crop" },
     { name: "Solid Waste Mgmt", img: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1000&auto=format&fit=crop" },
     { name: "Bio Energy", img: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1000&auto=format&fit=crop" },
     { name: "Green Hydrogen", img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1000&auto=format&fit=crop" },
