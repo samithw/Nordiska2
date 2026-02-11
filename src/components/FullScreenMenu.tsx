@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 import type { MouseEvent } from 'react';
+import Image from 'next/image';
 
 const menuContent: any = {
     "who-we-are": {
@@ -92,7 +93,7 @@ export const FullScreenMenu = ({ activeMenu, onClose }: { activeMenu: string | n
                         className="absolute top-8 left-8 lg:left-20 cursor-pointer"
                         onClick={() => handleNavigation('hero')}
                     >
-                        <img src="/images/ns__logo__trans1.png" alt="NORDISKA Logo" className="h-10" />
+                        <Image src="/images/ns__logo__trans1.png" alt="NORDISKA Logo" width={160} height={40} className="h-10 w-auto" />
                     </div>
 
                     <button
