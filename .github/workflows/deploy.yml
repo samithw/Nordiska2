@@ -24,6 +24,8 @@ jobs:
         run: npm ci
       
       - name: Build Static Site
+        env:
+          NEXT_PUBLIC_BASE_PATH: /nordiska2
         run: npm run build
       
       - name: Deploy to GitHub Pages
