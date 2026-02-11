@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
@@ -30,7 +32,7 @@ const StatCard = ({ stat, index }: { stat: any, index: any }) => {
 
 export const Stats = () => (
     <section id="stats" className="py-20 bg-cover bg-center bg-fixed relative"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558228148-70133246a06b?q=80&w=2670&auto=format&fit=crop')" }}>
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558228148-70133246a06b?q=80&w=2670&auto=format=fit=crop')" }}>
         <div className="absolute inset-0 bg-navy/80"></div>
         <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

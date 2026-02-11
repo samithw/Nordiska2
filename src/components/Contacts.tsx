@@ -1,3 +1,5 @@
+'use client';
+
 import { Icon } from './Icons';
 
 const contactPoints = [
